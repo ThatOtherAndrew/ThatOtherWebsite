@@ -7,23 +7,27 @@ header {
 .typing-animation {
     position: relative;
     font-size: 2vw;
+    padding-left: calc(50% - 23ch);
+    width: 46ch;
+    animation: typing 1.5s steps(23);
+    white-space: nowrap;
 }
 
 .typing-animation > h1 {
-    padding-left: calc(50% - 11.5ch);
     width: 23ch;
-    white-space: nowrap;
+    animation: inherit;
     overflow: hidden;
-    animation: typing 1.5s steps(23);
 }
 
 .typing-animation > .cursor {
     position: absolute;
     width: .8vw;
-    height: 80%;
-    top: 10%;
-    background-color: red;
-    animation: cursor-move 1.5s steps(23) forwards, cursor-blink .5s step-end infinite alternate;
+    height: 3.5ch;
+    right: -.5ch;
+    top: 50%;
+    transform: translate(100%, -50%);
+    background-color: white;
+    animation: blink 300ms step-end infinite alternate;
 }
 
 @keyframes typing {
@@ -32,16 +36,7 @@ header {
     }
 }
 
-@keyframes cursor-move {
-    from {
-        left: calc(50% - 22.6ch)
-    }
-    to {
-        left: calc(50% + 23.4ch)
-    }
-}
-
-@keyframes cursor-blink {
+@keyframes blink {
     50% {
         background-color: transparent
     }
