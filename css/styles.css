@@ -1,0 +1,48 @@
+header {
+    background-color: black;
+    color: white;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.typing-animation {
+    position: relative;
+    font-size: 2vw;
+}
+
+.typing-animation > h1 {
+    padding-left: calc(50% - 11.5ch);
+    width: 23ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 1.5s steps(23);
+}
+
+.typing-animation > .cursor {
+    position: absolute;
+    width: .8vw;
+    height: 80%;
+    top: 10%;
+    background-color: red;
+    animation: cursor-move 1.5s steps(23) forwards, cursor-blink .5s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes cursor-move {
+    from {
+        left: calc(50% - 22.6ch)
+    }
+    to {
+        left: calc(50% + 23.4ch)
+    }
+}
+
+@keyframes cursor-blink {
+    50% {
+        background-color: transparent
+    }
+}
