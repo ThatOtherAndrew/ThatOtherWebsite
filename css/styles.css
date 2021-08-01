@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+}
+
+header {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+@media (max-aspect-ratio: 4/5) {
+    header {
+        height: 56.25vw;
+    }
+}
+
+.typing-animation {
+    position: relative;
+    font-size: 2vw;
+    padding-left: calc(50% - 23ch);
+    width: 46ch;
+    animation: typing 1.5s steps(23);
+    white-space: nowrap;
+}
+
+.typing-animation > h1 {
+    width: 23ch;
+    animation: inherit;
+    overflow: hidden;
+}
+
+.typing-animation > .cursor {
+    position: absolute;
+    width: .8vw;
+    height: 3.5ch;
+    right: -.5ch;
+    top: 50%;
+    transform: translate(100%, -50%);
+    background-color: white;
+    animation: blink 300ms step-end infinite alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        background-color: transparent
+    }
+}
