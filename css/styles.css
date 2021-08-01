@@ -1,7 +1,20 @@
+body {
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+}
+
 header {
     background-color: black;
     color: white;
-    font-family: "JetBrains Mono", monospace;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+@media (max-aspect-ratio: 4/5) {
+    header {
+        height: 56.25vw;
+    }
 }
 
 .typing-animation {
